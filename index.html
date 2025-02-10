@@ -1,7 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+            text-align: center;
+        }
+        h1 {
+            color: #d60000;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: #ff4081;
+            color: white;
+            transition: font-size 0.3s ease;
+        }
+        #no {
+            background-color: #888;
+            color: white;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Will You Be My Valentine? 💖</h1>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById("yes");
+        const noButton = document.getElementById("no");
+        let fontSize = 20;
+
+        noButton.addEventListener("click", () => {
+            fontSize += 10;
+            yesButton.style.fontSize = fontSize + "px";
+        });
+    </script>
 </body>
 </html>
