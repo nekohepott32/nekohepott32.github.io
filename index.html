@@ -47,6 +47,8 @@
             width: 100vw;
             height: 100vh;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -71,8 +73,14 @@
             yesButton.style.fontSize = fontSize + "px";
             vineBoomImage.style.display = "block";
             setTimeout(() => {
+                vineBoomImage.style.opacity = "1";
+            }, 10);
+            setTimeout(() => {
+                vineBoomImage.style.opacity = "0";
+            }, 800);
+            setTimeout(() => {
                 vineBoomImage.style.display = "none";
-            }, 1000);
+            }, 1100);
         });
 
         yesButton.addEventListener("click", () => {
