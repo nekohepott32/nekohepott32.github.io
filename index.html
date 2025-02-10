@@ -67,6 +67,7 @@
         const vineBoomImage = document.getElementById("vineBoom");
         const loveImage = document.getElementById("loveImage");
         let fontSize = 20;
+        let noClickCount = 0;
 
         noButton.addEventListener("click", () => {
             fontSize += 10;
@@ -81,6 +82,11 @@
             setTimeout(() => {
                 vineBoomImage.style.display = "none";
             }, 1100);
+            
+            noClickCount++;
+            if (noClickCount >= 6) {
+                noButton.remove();
+            }
         });
 
         yesButton.addEventListener("click", () => {
