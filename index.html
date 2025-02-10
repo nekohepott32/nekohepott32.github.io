@@ -38,6 +38,13 @@
             background-color: #888;
             color: white;
         }
+        .hidden {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
@@ -46,15 +53,27 @@
         <button id="yes">Yes</button>
         <button id="no">No</button>
     </div>
+    <img id="vineBoom" src="yuno.jpg" class="hidden" width="300" height="300">
+    <img id="loveImage" src="loveyou.webp" class="hidden" width="300" height="300">
 
     <script>
         const yesButton = document.getElementById("yes");
         const noButton = document.getElementById("no");
+        const vineBoomImage = document.getElementById("vineBoom");
+        const loveImage = document.getElementById("loveImage");
         let fontSize = 20;
 
         noButton.addEventListener("click", () => {
             fontSize += 10;
             yesButton.style.fontSize = fontSize + "px";
+            vineBoomImage.style.display = "block";
+            setTimeout(() => {
+                vineBoomImage.style.display = "none";
+            }, 1000);
+        });
+
+        yesButton.addEventListener("click", () => {
+            loveImage.style.display = "block";
         });
     </script>
 </body>
